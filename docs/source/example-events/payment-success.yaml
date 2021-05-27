@@ -1,0 +1,25 @@
+id: 16
+date: '2020-11-13T10:39:38'
+type: payment_success
+# UUID of the form-submission
+uuid: ed251954-a686-4c6f-92dc-0443b60cee08
+action:
+  needs_confirmation: false
+  title: 'Donation page'
+  type: donation
+  type_title: Donation
+  uuid: 6e58c909-622f-4414-9d73-1d76accc5bdb
+# Generic payment data
+pid: '124505'
+method_generic: Direct Debit
+method_specific: Manual direct debit - Trust
+controller: \Drupal\manual_direct_debit_uk\AccountDataController
+currency_code: GBP
+total_amount: 3
+status: payment_status_success
+# Additional payment method specific data
+account:
+  holder: test,
+  number: '42126012'
+  payment_date: '2'
+  sort_code: '123456'

@@ -1,0 +1,19 @@
+# Event metadata this is the same for all event types.
+id: 180
+type: contact_update
+date: '2021-05-14T08:08:03.083104'
+# New data for the contact.
+title: Title 1
+first_name: First
+last_name: Last
+# Addresses, email addresses and phone numbers are represented as lists.
+address:
+- administrative_area: London
+  country: GB
+  locality: London
+  postal_code: SW1A 1AA
+  premise: Address 2
+  thoroughfare: Address 1
+email: [supporter@example.com]
+phone_number: ['12345', '67890']
+tags: [testtag]
