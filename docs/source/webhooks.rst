@@ -60,6 +60,8 @@ This means that form submission data has been received by the CRM.
 Form submission confirmed
 *************************
 
+When email confirmation is enabled for a form. This event signals that the user has clicked on the confirmation link for the first time.
+
 .. literalinclude:: example-events/form-submission-confirmed.yaml
 
 
