@@ -5,7 +5,6 @@ This documentation documents APIs and other development stuff related to Impact 
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
    
    webhooks
 
