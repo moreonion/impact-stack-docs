@@ -1,0 +1,8 @@
+[project]
+name = "impact-stack-docs"
+version = "0.0.1"
+description = "Developer documentation for Impact Stack APIs"
+
+[dependecies]
+sphinx
+guzzle-sphinx-theme
