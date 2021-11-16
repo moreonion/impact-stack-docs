@@ -14,7 +14,7 @@ Structure
 The structure of a form configuration file is as follows:
 
 - Form components are represented as nodes in a tree structure, where the root node typically represents the component that generates a ``<form>`` element.
-- The root node **must** have a ``meta`` attribute in which to store key-value data pertaining to its use with logCRM.
+- The root node *may* have a ``context`` attribute in which to store key-value data pertaining to its use with logCRM.
 - Each node **must** have a ``type`` attribute corresponding to the filename in which the component's template is stored.
 - Each node *may* have a ``params`` attribute in which to store key-value data used by the component: there are no fixed requirements for its content, as it depends on which data the component template requires and how it uses it, but a useful convention is to match attribute/property names and values available on the component's principal HTML element where possible.
 - Each node *may* have a ``components`` attribute which contains a list of sub-components that are to be generated from within the current node's component template; the manner in which it does this is up to the template.
@@ -26,7 +26,7 @@ Example
 .. code-block:: js
 
     {
-        "meta": {},
+        "context": {},
         "type": "form",
         "params": {
             "action": {
