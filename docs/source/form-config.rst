@@ -1,5 +1,5 @@
-Form configuration files
-========================
+Form configuration
+==================
 
 
 Introduction
