@@ -5,7 +5,7 @@ Form configuration
 Introduction
 ------------
 
-Form configuration files are an implementation-independent means of specifying the content of Impact Stack forms; by using JSON syntax to specify parent-child relationships between form components and key-value relationships between data, front- and back-end routines can use the same structure for their own purposes, e.g. to generate corresponding HTML or to validate form submissions.
+Form configuration files are an implementation-independent means of specifying the content and behavior of Impact Stack forms; by using JSON syntax to specify parent-child relationships between form components and key-value relationships between data, front- and back-end routines can use the same structure for their own purposes, e.g. to generate corresponding HTML or to validate form submissions.
 
 
 Structure
@@ -13,11 +13,11 @@ Structure
 
 The structure of a form configuration file is as follows:
 
-- Form components are represented as nodes in a tree structure, where the root node typically represents the component that generates a ``<form>`` element.
+- Form components are represented as nodes in a tree structure, where the root node typically represents the entire form (ie. the ``<form>`` element).
 - The root node *may* have a ``context`` attribute in which to store key-value data pertaining to its use with logCRM.
-- Each node **must** have a ``type`` attribute corresponding to the filename in which the component's template is stored.
-- Each node *may* have a ``params`` attribute in which to store key-value data used by the component: there are no fixed requirements for its content, as it depends on which data the component template requires and how it uses it, but a useful convention is to match attribute/property names and values available on the component's principal HTML element where possible.
-- Each node *may* have a ``components`` attribute which contains a list of sub-components that are to be generated from within the current node's component template; the manner in which it does this is up to the template.
+- Each node **must** have a ``type`` attribute. The component type defines the component’s behaviour and the meaning of ``params`` and sub-``components``. In the front-end the type is mapped to a template for producing the necessary markup.
+- Each node *may* have a ``params`` attribute in which to store key-value data: There are no fixed requirements for its content, as it’s meaning depends on the component type. A useful convention is to match attribute/property names and values available on the component type’s principal HTML element where possible. Params that are not relevant to the implemented use-case can safely be ignored (eg. backend apps might ignore purely presentational properties like a ``label``).
+- Each node *may* have a ``components`` attribute which contains a list of sub-components. The exact meaning of sub-components depends on the component type. In the front-end they often correspond to nested HTML elements.
 
 
 Example
