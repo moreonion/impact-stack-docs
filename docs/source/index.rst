@@ -5,9 +5,9 @@ This documentation documents APIs and other development stuff related to Impact 
 
 .. toctree::
    :maxdepth: 2
-   
-   webhooks
 
+   webhooks
+   form-config
 
 
 Indices and tables
