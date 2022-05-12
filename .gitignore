@@ -8,4 +8,3 @@ __pycache__
 coverage.xml
 .pytest_cache/
 docs/build
-.vscode
