@@ -55,7 +55,7 @@ This means that form submission data has been received by the CRM.
 
 .. literalinclude:: example-events/form-submission.yaml
   :language: yaml
-  
+
 
 Form submission confirmed
 *************************
@@ -72,7 +72,7 @@ This event is sent, whenever (possibly) new data for a contact is available. Whe
 
 .. literalinclude:: example-events/contact-update-form.yaml
   :language: yaml
-  
+
 When new data for a contact is being processed this might spawn additional ``contact_update``-events. For example for updating the automatically attached MP data:
 
 .. literalinclude:: example-events/contact-update-mp.yaml
@@ -82,7 +82,21 @@ When new data for a contact is being processed this might spawn additional ``con
 Payment success
 ***************
 
+..  deprecated:: 23.06
+    Use the payment_status_change events instead.
+
 This event means that a payment related to a form submission has been processed successfully.
 
 .. literalinclude:: example-events/payment-success.yaml
+  :language: yaml
+
+
+Payment status change
+*********************
+
+This event means that the status of a payment has changed. To reduce noise, we only include status changes that occur after the user interaction has finished and are linked to a form submission. Status changes may also include additional information from the payment provider (e.g., transaction IDs). This usually means that the payment has either succeeded or failed. Note that after a payment fails, the user might choose to retry, which will yield more status changes for the same payment.
+
+For each payment method, there are typical status sequences that the payment goes through. The exact meaning of the statuses and content of the `payment_data` also depends on the payment method.
+
+.. literalinclude:: example-events/payment-status-change.yaml
   :language: yaml
