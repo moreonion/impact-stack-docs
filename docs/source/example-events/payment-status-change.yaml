@@ -1,0 +1,21 @@
+id: 123
+type: payment_status_change
+version: 1.1.0
+# Payment ID. Use this to match multiple status changes for the same payment.
+pid: '9088'
+# Machine name of the payment method
+controller: stripe_payment_credit_card
+# Labels for the payment method
+method_generic: Credit card
+method_specific: Stripe Payment (Live)
+# New and old payment status
+status: stripe_payment_status_accepted
+previous_status: payment_status_pending
+# Payment amount and currency
+total_amount: 100
+currency_code: EUR
+# Payment method specific data (stripe intent ID in this case)
+payment_data:
+  transaction_id: pi_3NOKIODvbS6ezf4w21zIR6Ft
+# UUID of the form-submission
+uuid: cb59fac8-51ea-4348-94a8-bb073c53aad5

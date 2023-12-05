@@ -1,0 +1,10 @@
+id: 123
+type: donation
+version: 2.1.0
+date: '2021-05-14T08:07:37'
+amount: 99.99 EUR
+recurrence_interval: P1M  # ISO 8601 time interval, none for one-off payments
+# Copied from the form submission event.
+data: {}  # The form submission data
+action: {}  # The action / donation page metadata
+tracking: {}  # Tracking information for the form submission.
