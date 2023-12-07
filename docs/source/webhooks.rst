@@ -42,6 +42,6 @@ Currently webhooks can only be set up by our support team. You can contact them 
 Event types
 -----------
 
-At the moment there is only one type of webhook and it gets all the events triggered in our CRM system. You can filter the events by looking at their ``type`` property. Each type has its own semantics.
+At the moment, there is only one type of webhook, and it gets all the events triggered in our CRM system. You can filter the events by looking at their ``type`` property. Each type has its own semantics.
 
 Refer to the documentation about :doc:`events/index` for more information about the events and their data.

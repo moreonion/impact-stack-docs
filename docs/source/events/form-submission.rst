@@ -8,14 +8,14 @@ General
 -------
 
 - ``type``: Always ``form_submission`` for this type of action.
-- ``uuid``: The unique UUID of this submission, other events use this to reference the submission (e.g. ``form_submission_confirmed`` events)
+- ``uuid``: The unique UUID of this submission, other events use this to reference the submission (e.g., ``form_submission_confirmed`` events)
 - ``is_draft`` (boolean): Whether the submission was saved as a draft (``true``) or is completed (``false``).
 
 
 Submitted data
 --------------
 
-The submitted data is available in the ``data`` property of the event. Each value can be accessed using its form-key.
+The submitted data is available in the ``data`` property of the event. Each value can be accessed using its form key.
 
 The keys and their types and value ranges depend on your form configuration.
 
@@ -27,9 +27,9 @@ Action data
 
 Data about the action and its configuration can be found in ``action``. This contains:
 
-- ``uuid``: A globally unique UUID for this action
+- ``uuid`` (uuid): A globally unique UUID for this action
 - ``title``: The title of the action
-- ``type``: The type of action (e.g. ``petition``, ``email_to_target``, …)
+- ``type``: The type of action (e.g., ``petition``, ``email_to_target``, …)
 - ``needs_confirmation`` (boolean): If present and ``true`` the action was configured to require an email confirmation.
 - ``tags``: A list of auto-tagging tags configured for this action at the time of submission.
 
@@ -61,7 +61,7 @@ URLs:
 
 - ``form_url``: The URL of the page where the form was submitted
 - ``entry_url``: The URL of the entry page on the domain where the form was submitted.
-- ``external_referer``: The referring page, if any and the browser provided it.
+- ``external_referer``: The referring page, if any, and the browser provided it.
 
 URL parameters:
 
@@ -91,7 +91,7 @@ Information about opt-ins is provided on ``optins``. Each of the sub-objects rep
 - ``channel``: Which communication channel was opted-in to (e.g., email, phone, post, …)
 - ``operation``: The meaning of the user input. One of: ``opt-in``, ``no-change``, ``opt-out``
 - ``statement``: The opt-in statement that was configured for the form component at the time it was submitted. This should represent the legally binding copy that the user accepted.
-- ``value``: Similar to ``operation`` this represents the user’s choice but it also includes the type of input element used (e.g. ``radios:opt-in``).
+- ``value``: Similar to ``operation`` this represents the user’s choice, but it also includes the type of input element used (e.g., ``radios:opt-in``).
 - ``address`` (only for email): The email address that was opted-in.
 
 Legacy properties
@@ -99,8 +99,8 @@ Legacy properties
 
 Earlier 1.x versions of the event used a different format:
 
-- The submitted data was provided directly in the root of the event (without being nested in ``data``).
-- Some of the properties were prefixed with an underscore (e.g. ``_optins``).
+- The submitted data was provided directly at the root of the event (without being nested in ``data``).
+- Some of the properties were prefixed with an underscore (e.g., ``_optins``).
 
 .. deprecated:: 1.1.0
     These properties will be removed in 2.x.

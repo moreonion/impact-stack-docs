@@ -7,8 +7,8 @@ This event type is a synthesis of the payment status change and its form submiss
 Payment data
 ------------
 
-- ``amount``: Amount and currency (e.g. ``123.45 EUR``)
-- ``recurrence_interval`` (interval): A ISO 8601 date interval (e.g. ``P1M`` for monthly, ``P1Y`` for yearly), ``null`` for one-off payments
+- ``amount`` (money): Amount and currency (e.g., ``123.45 EUR``)
+- ``recurrence_interval`` (interval): A ISO 8601 date interval (e.g., ``P1M`` for monthly, ``P1Y`` for yearly), ``null`` for one-off payments
 
 
 Form submission data
