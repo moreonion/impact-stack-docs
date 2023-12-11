@@ -8,7 +8,7 @@ General
 -------
 
 - ``type``: Always ``form_submission`` for this type of action.
-- ``uuid``: The unique UUID of this submission, other events use this to reference the submission (e.g., ``form_submission_confirmed`` events)
+- ``uuid``: The unique UUID of this submission, other events use this to reference the submission (e.g., ``form_submission_confirmed`` events). Note: This is *not* the UUID of the contact.
 - ``is_draft`` (boolean): Whether the submission was saved as a draft (``true``) or is completed (``false``).
 
 
@@ -27,7 +27,7 @@ Action data
 
 Data about the action and its configuration can be found in ``action``. This contains:
 
-- ``uuid`` (uuid): A globally unique UUID for this action
+- ``uuid`` (uuid): A globally unique UUID for this action. Note: This is *not* the UUID of the contact.
 - ``title``: The title of the action
 - ``type``: The type of action (e.g., ``petition``, ``email_to_target``, …)
 - ``needs_confirmation`` (boolean): If present and ``true`` the action was configured to require an email confirmation.
@@ -91,7 +91,7 @@ Information about opt-ins is provided on ``optins``. Each of the sub-objects rep
 - ``channel``: Which communication channel was opted-in to (e.g., email, phone, post, …)
 - ``operation``: The meaning of the user input. One of: ``opt-in``, ``no-change``, ``opt-out``
 - ``statement``: The opt-in statement that was configured for the form component at the time it was submitted. This should represent the legally binding copy that the user accepted.
-- ``value``: Similar to ``operation`` this represents the user’s choice, but it also includes the type of input element used (e.g., ``radios:opt-in``).
+- ``value``: Similar to ``operation`` this represents the user’s choice, but it also includes the type of input element used (e.g., ``radios:opt-in``). This is the actual value of the opt-in form component that is also visible in ``data``.
 - ``address`` (only for email): The email address that was opted-in.
 
 Legacy properties

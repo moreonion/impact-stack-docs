@@ -7,11 +7,11 @@ date: '2021-05-14T08:07:37'
 # same form submission (eg. form_submission_confirmed, payment_success).
 uuid: ae3b0b49-e6db-4dc9-a0f1-d2be7f996ed3
 is_draft: false
-# Links to the form/action and to the form submission.
+# Links to the form/action and to the form submission. Will be removed in version 2.x.
 links:
   action: 'https://demo1.staging.campaignion.org/node/144'
   submission: 'https://demo1.staging.campaignion.org/node/144/submission/35202'
-_links: # copy of links
+_links: # Copy of links for backwards compatibility.
 # Opt-in data. The keys are for internal use only.
 optins:
   '30':
@@ -30,13 +30,15 @@ optins:
     ip_address: 1.1.1.1
     lists: ['mailchimp:a702e2babc', 'mailchimp:c9643a0edf']
     operation: opt-in
-    statement: 'This is a text describing the exact language of what the user has opted-in into.'
+    statement: >
+      This is the statement configured in the form-builder for this opt-in component.
+      It should describe the exact language of what the user has opted-in into.
     trigger_opt_in_email: false
     trigger_welcome_email: false
     unsubscribe_all: false
     unsubscribe_unknown: false
     value: radios:opt-in
-_optins: # copy of optins
+_optins: # Copy of optins for backwards compatibility. Removed in version 2.x.
 # Data about the action
 action:
   campaign_tags: []
@@ -64,6 +66,7 @@ tracking:
   user_id: 571b05d3
   version: ''
 # Data submitted by the user as part of the form submission.
+# Each component’s data can be found under the form-key configured in the form-builder.
 data:
   city: London
   country: GB
@@ -80,7 +83,7 @@ data:
   street_address: Address 1
   street_address_2: Address 2
   title: Title 1
-# Inline form data — deprecated as of version 1.1.0
+# Inline form data — deprecated as of version 1.1.0, will be removed in version 2.x
 city: London
 country: GB
 email: supporter@example.com
