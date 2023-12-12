@@ -7,7 +7,7 @@ Webhooks allow you to register URLs for being called when certain events in our 
 Authentication
 --------------
 
-We strongly recommend that you implement some type of authentication for your webhook options. At the moment your options are:
+We strongly recommend that you implement some type of authentication for your webhook endpoint. At the moment your options are:
 
 * A shared secret that’s part of your endpoint URL. For example:
 
@@ -28,9 +28,9 @@ Every event is sent independently of any other event. This means that webhooks m
 Failed attempts and resends
 ***************************
 
-In case a webhook attempt fails, our system automatically schedules a retry. The resend will happen after a few minutes, and the interval will double for each successive attempt. After ~10 attempts spread over a couple of days, it will give up. Ideally, this gives you enough time to react to any issues.
+In case an attempt to call a webhook fails, our system automatically schedules a retry. The resend will happen after a few minutes, and the interval will double for each successive attempt. After ~10 attempts spread over a couple of days, it will give up. Ideally, this gives you enough time to react to any issues.
 
-Should you still miss some events, you can always ask our support team to trigger a manual resend of certain webhook calls.
+Should you still miss some events, you can ask our support team to trigger a manual resend of certain webhook calls.
 
 
 Setting up a webhook
