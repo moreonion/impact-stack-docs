@@ -16,9 +16,10 @@ Here is a list of the most common payment statuses used in Impact Stack 1.0.
 - ``payment_status_new``: The payment process was (re)started reusing the same form submission.
 - ``payment_status_pending``: The payment is being processed by the payment provider.
 
-For Stripe there are a few additional statuses:
+Specific statuses for Stripe:
 
-- ``stripe_payment_status_accepted``: Our backend was notified that Stripe validated and approved the payment. The form submission is continued which triggers the ``payment_status_success`` status. These two statuses usually occur almost at the same time and might be emitted in any order.
+- ``stripe_payment_status_accepted``: Stripe’s client side validation passed and the form was submitted. The supporter was redirected to the thank you page.
+- ``payment_status_success``: Stripe called a webhook to notify our system that the payment was successfully processed.
 - ``stripe_payment_intent_created``: This means that the client-side validation has been triggered for the first time, triggering the creation of an intent.
 - ``stripe_payment_no_intent``: Error condition. This means Stripe notified us about a payment for which we don’t have a matching intent.
 
