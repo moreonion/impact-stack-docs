@@ -54,6 +54,7 @@ All events are encoded as JSON. On top of the JSON built-in types the events can
 - date: ISO 8601 encoded dates either with an explicit offset or in UTC
 - interval: ISO 8601 time interval
 - money: Money value encoded as string of the floating point value and the ISO 4217 code separated by a space
+- float: A floating point number encoded as string.
 
 If a property is described without a hint to its type it’s a string.
 

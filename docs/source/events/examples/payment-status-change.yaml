@@ -17,5 +17,17 @@ currency_code: EUR
 # Payment method specific data (stripe intent ID in this case)
 payment_data:
   transaction_id: pi_3NOKIODvbS6ezf4w21zIR6Ft
+# Line items:
+line_items:
+- name: one-off
+  amount: 10
+  quantity: 9
+  tax_rate: 0
+  recurrence_interval: null
+- name: monthly-item
+  amount: 10
+  quantity: 1
+  tax_rate: 0
+  recurrence_interval: P1M
 # UUID of the form-submission
 uuid: cb59fac8-51ea-4348-94a8-bb073c53aad5

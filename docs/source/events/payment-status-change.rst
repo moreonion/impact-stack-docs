@@ -6,6 +6,30 @@ This event means that the status of a payment has changed. To reduce noise, we o
 For each payment method, there are typical status sequences that the payment goes through. The exact meaning of the statuses and content of the ``payment_data`` also depends on the payment method.
 
 
+Line items
+----------
+
+.. versionadded:: 1.2.0
+
+Each status update contains the full list of payment ``line_items``. Each line item has the following data:
+
+- ``name``: A unique name for this line item
+- ``amount`` (float): The price of each unit
+- ``quantity`` (float): The number of items
+- ``tax_rate`` (float): The applicable VAT (or equivalent) tax rate
+- ``recurrence_interval`` (interval): For recurring payments this specifies the interval (e.g. ``P1M`` for monthly, ``P1Y`` for yearly). It is set to ``null`` for one-off payments.
+
+The total amount of the payment is the sum over all line items:
+
+.. math::
+
+  \sum_{i} amount_i \cdot quantity_i \cdot (1 + tax\_rate_i)
+
+For most of our donation forms there will be only one line item with ``quantity=1`` and ``tax_rate=0``.
+
+The line items are summarized into one :ref:`donation_event` per ``recurrence_interval``. These are perhaps easier to interpret for most use cases.
+
+
 Payment statuses
 ----------------
 
