@@ -45,7 +45,7 @@ The total amount of the payment is the sum over all line items:
 
 For most of our donation forms there will be only one line item with ``quantity=1`` and ``tax_rate=0``.
 
-The line items are summarized into one :ref:`donation_event` per ``recurrence_interval``. These are perhaps easier to interpret for most use cases.
+The line items are converted into :ref:`donation_event` events (one event per ``recurrence_interval``). For most use cases, these are easier to interpret.
 
 
 Example event
