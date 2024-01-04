@@ -6,6 +6,24 @@ This event means that the status of a payment has changed. To reduce noise, we o
 For each payment method, there are typical status sequences that the payment goes through. The exact meaning of the statuses and content of the ``payment_data`` also depends on the payment method.
 
 
+Payment statuses
+----------------
+
+Here is a list of the most common payment statuses used in Impact Stack 1.0.
+
+- ``payment_status_success``: The payment was successfully processed. The donation form was submitted and the supporter was redirected to the thank you page.
+- ``payment_status_failed``: Something went wrong during the payment.
+- ``payment_status_new``: The payment process was (re)started reusing the same form submission.
+- ``payment_status_pending``: The payment is being processed by the payment provider.
+
+Specific statuses for Stripe:
+
+- ``stripe_payment_status_accepted``: Stripe’s client side validation passed and the form was submitted. The supporter was redirected to the thank you page.
+- ``payment_status_success``: Stripe called a webhook to notify our system that the payment was successfully processed.
+- ``stripe_payment_intent_created``: This means that the client-side validation has been triggered for the first time, triggering the creation of an intent.
+- ``stripe_payment_no_intent``: Error condition. This means Stripe notified us about a payment for which we don’t have a matching intent.
+
+
 Line items
 ----------
 
@@ -28,24 +46,6 @@ The total amount of the payment is the sum over all line items:
 For most of our donation forms there will be only one line item with ``quantity=1`` and ``tax_rate=0``.
 
 The line items are summarized into one :ref:`donation_event` per ``recurrence_interval``. These are perhaps easier to interpret for most use cases.
-
-
-Payment statuses
-----------------
-
-Here is a list of the most common payment statuses used in Impact Stack 1.0.
-
-- ``payment_status_success``: The payment was successfully processed. The donation form was submitted and the supporter was redirected to the thank you page.
-- ``payment_status_failed``: Something went wrong during the payment.
-- ``payment_status_new``: The payment process was (re)started reusing the same form submission.
-- ``payment_status_pending``: The payment is being processed by the payment provider.
-
-Specific statuses for Stripe:
-
-- ``stripe_payment_status_accepted``: Stripe’s client side validation passed and the form was submitted. The supporter was redirected to the thank you page.
-- ``payment_status_success``: Stripe called a webhook to notify our system that the payment was successfully processed.
-- ``stripe_payment_intent_created``: This means that the client-side validation has been triggered for the first time, triggering the creation of an intent.
-- ``stripe_payment_no_intent``: Error condition. This means Stripe notified us about a payment for which we don’t have a matching intent.
 
 
 Example event
