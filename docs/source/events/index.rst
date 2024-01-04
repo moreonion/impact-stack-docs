@@ -51,10 +51,10 @@ Data types
 All events are encoded as JSON. On top of the JSON built-in types the events can contain properties with the following data:
 
 - uuid: A hex encoded UUID
-- date: ISO 8601 encoded dates either with an explicit offset or in UTC
-- interval: ISO 8601 time interval
-- money: Money value encoded as string of the floating point value and the ISO 4217 code separated by a space
-- float: A floating point number encoded as string.
+- date: ISO 8601 encoded dates either with an explicit offset or in UTC, e.g. ``2023-12-24T01:23:45+01:00`` which equals ``2023-12-24T00:23:45+00:00``
+- interval: ISO 8601 time interval, e.g. ``P1M`` (1 month), ``P3M`` (3 months), ``P1Y`` (1 year)
+- float: A floating point number encoded as string like ``1.23``, ``4.0``, ``5`` (comma is optional).
+- money: Money value encoded as string of the float (see above) and the ISO 4217 currency code separated by a space e.g. ``1.23 EUR``, ``4 GBP``
 
 If a property is described without a hint to its type it’s a string.
 

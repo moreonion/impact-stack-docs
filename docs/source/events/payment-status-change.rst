@@ -13,7 +13,7 @@ Line items
 
 Each status update contains the full list of payment ``line_items``. Each line item has the following data:
 
-- ``name``: A unique name for this line item
+- ``name``: A unique name for this line item, set when configuring the form
 - ``amount`` (float): The price of each unit
 - ``quantity`` (float): The number of items
 - ``tax_rate`` (float): The applicable VAT (or equivalent) tax rate
