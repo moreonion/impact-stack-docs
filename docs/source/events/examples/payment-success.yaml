@@ -1,6 +1,7 @@
 id: 16
-date: '2020-11-13T10:39:38'
 type: payment_success
+version: 1.1.0
+date: '2020-11-13T10:39:38'
 # UUID of the form-submission
 uuid: ed251954-a686-4c6f-92dc-0443b60cee08
 action:
