@@ -24,6 +24,30 @@ Specific statuses for Stripe:
 - ``stripe_payment_no_intent``: Error condition. This means Stripe notified us about a payment for which we don’t have a matching intent.
 
 
+Line items
+----------
+
+.. versionadded:: 1.2.0
+
+Each status update contains the full list of payment ``line_items``. Each line item has the following data:
+
+- ``name``: A unique name for this line item, set when configuring the form
+- ``amount`` (float): The price of each unit
+- ``quantity`` (float): The number of items
+- ``tax_rate`` (float): The applicable VAT (or equivalent) tax rate
+- ``recurrence_interval`` (interval): For recurring payments this specifies the interval (e.g. ``P1M`` for monthly, ``P1Y`` for yearly). It is set to ``null`` for one-off payments.
+
+The total amount of the payment is the sum over all line items:
+
+.. math::
+
+  \sum_{i} amount_i \cdot quantity_i \cdot (1 + tax\_rate_i)
+
+For most of our donation forms there will be only one line item with ``quantity=1`` and ``tax_rate=0``.
+
+The line items are converted into :ref:`donation_event` events (one event per ``recurrence_interval``). For most use cases, these are easier to interpret.
+
+
 Example event
 -------------
 

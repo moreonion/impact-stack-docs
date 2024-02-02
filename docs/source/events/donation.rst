@@ -1,3 +1,5 @@
+.. _donation_event:
+
 Donation
 ========
 
