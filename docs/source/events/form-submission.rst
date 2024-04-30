@@ -27,6 +27,7 @@ Action data
 
 Data about the action and its configuration can be found in ``action``. This contains:
 
+- ``id``: A short unique ID for this action, for IST 1.0 this is of the form ``N123``
 - ``uuid`` (uuid): A globally unique UUID for this action. Note: This is *not* the UUID of the contact.
 - ``title``: The title of the action
 - ``type``: The type of action (e.g., ``petition``, ``email_to_target``, …)
@@ -39,6 +40,8 @@ For 1.x this also provides (deprecated):
 - ``source_tags``
 - ``type_title``
 
+.. versionchanged:: 1.3.0
+    Added the ``id`` property.
 
 Links
 -----
