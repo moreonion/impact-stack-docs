@@ -7,6 +7,7 @@ This event type is a synthesis of the payment status change and its form submiss
 Payment data
 ------------
 
+- ``pid`` (int): A numeric ID for cross-referencing with other events.
 - ``amount`` (money): Amount and currency (e.g., ``123.45 EUR``)
 - ``recurrence_interval`` (interval): A ISO 8601 date interval (e.g., ``P1M`` for monthly, ``P1Y`` for yearly), ``null`` for one-off payments
 
@@ -29,4 +30,4 @@ Example
 .. literalinclude:: examples/donation.yaml
   :language: yaml
 
-.. versionadded:: 2.1.0
+.. versionadded:: 1.3.0
