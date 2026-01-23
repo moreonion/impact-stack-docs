@@ -40,8 +40,17 @@ For 1.x this also provides (deprecated):
 - ``source_tags``
 - ``type_title``
 
+
 .. versionchanged:: 1.3.0
     Added the ``id`` property.
+
+
+.. versionchanged:: 2.0.0
+    The ``title`` contains the internal action title.
+
+
+.. warning::
+    If you would like to use the action ``title`` in public communication, please ensure that it is chosen accordingly.
 
 Links
 -----
