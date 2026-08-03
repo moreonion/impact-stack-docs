@@ -10,6 +10,10 @@ General
 - ``type``: Always ``form_submission`` for this type of action.
 - ``uuid``: The unique UUID of this submission, other events use this to reference the submission (e.g., ``form_submission_confirmed`` events). Note: This is *not* the UUID of the contact.
 - ``is_draft`` (boolean): Whether the submission was saved as a draft (``true``) or is completed (``false``).
+- ``test_mode`` (boolean): Whether the submission was made in test mode.
+
+.. versionadded:: 2.2.0
+    Added the ``test_mode`` property.
 
 
 Submitted data
@@ -105,6 +109,7 @@ Information about opt-ins is provided on ``optins``. Each of the sub-objects rep
 - ``statement``: The opt-in statement that was configured for the form component at the time it was submitted. This should represent the legally binding copy that the user accepted.
 - ``value``: Similar to ``operation`` this represents the user’s choice, but it also includes the type of input element used (e.g., ``radios:opt-in``). This is the actual value of the opt-in form component that is also visible in ``data``.
 - ``address`` (only for email): The email address that was opted-in.
+
 
 Legacy properties
 -----------------
